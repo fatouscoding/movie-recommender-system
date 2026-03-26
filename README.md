@@ -57,8 +57,6 @@ The system processes structured datasets of movies and user ratings, computes st
 ### Personalized Recommendations
 ![Recommendations](recommendations.png)
 
-<img width="469" height="139" alt="Screenshot 2026-03-25 233431" src="https://github.com/user-attachments/assets/8bca499d-8797-431a-94a2-3d171d2d3671" />
-
 ---
 
 ## How to Run

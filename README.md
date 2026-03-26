@@ -52,13 +52,13 @@ The system processes structured datasets of movies and user ratings, computes st
 
 ### Top Movies by Average Rating
 ![Top Movies](top_movies.png)
-<img width="1216" height="585" alt="Screenshot 2026-03-25 233919" src="https://github.com/user-attachments/assets/44a0d157-a595-4213-8fd7-0a8c59d30a85" />
+<img width="626" height="205" alt="Screenshot 2026-03-25 233441" src="https://github.com/user-attachments/assets/61b6f810-aa1f-426e-bd37-5ca0c3a588dc" />
 
 
 ### Personalized Recommendations
 ![Recommendations](recommendations.png)
+<img width="626" height="205" alt="recommendation" src="https://github.com/user-attachments/assets/785f4b81-99e1-4f90-b62e-69f079996291" />
 
-<img width="626" height="205" alt="Screenshot 2026-03-25 233441" src="https://github.com/user-attachments/assets/6a472ac3-4cee-4cc2-879f-15fdb2d5a0c0" />
 
 ---
 

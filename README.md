@@ -51,8 +51,7 @@ The system processes structured datasets of movies and user ratings, computes st
 ## Demo
 
 ### Top Movies by Average Rating
-![Top Movies](<img width="626" height="205" alt="top_movies" src="https://github.com/user-attachments/assets/193e8850-a333-487e-8414-e576566bd2bd" />)
-
+![Top Movies](top_movies.png)
 
 ### Personalized Recommendations
 ![Recommendations](recommendations.png)

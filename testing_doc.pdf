@@ -1,0 +1,283 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [ 5 0 R 7 0 R 9 0 R ] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Times-Roman >>
+endobj
+4 0 obj
+<< /Length 2720 >>
+stream
+BT
+/F1 12 Tf
+54 726 Td
+(# Testing Documentation - Movie Recommender \(Python 3.12\)) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(## 1\) Which input files were manually created vs chatbot-generated) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(- Manually created input test files: none.) Tj
+0 -14 Td
+(- Chatbot-generated test files: all test data files are generated at runtime by ) Tj
+0 -14 Td
+(`test_movie_recommender.py` using `tempfile.TemporaryDirectory\(\)` plus `write_text_file\(...\)`.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(## 2\) Number of movies and ratings in each test file pair) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(The test suite uses one primary generated dataset pair:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(### `movies.txt`) Tj
+0 -14 Td
+(- total lines written: 16 \(including one blank line\)) Tj
+0 -14 Td
+(- non-blank rows: 15) Tj
+0 -14 Td
+(- valid accepted movie rows: 8) Tj
+0 -14 Td
+(- rejected rows: 7 \(duplicate ID + malformed/empty-field rows\)) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(### `ratings.txt`) Tj
+0 -14 Td
+(- total lines written: 22 \(including one blank line\)) Tj
+0 -14 Td
+(- non-blank rows: 21) Tj
+0 -14 Td
+(- valid accepted rating rows after parser + duplicate filtering: 14) Tj
+0 -14 Td
+(- rejected rows: 7 \(duplicate + malformed + invalid-value rows\)) Tj
+0 -14 Td
+(- additional unmatched valid-format row during indexing: 1 \(`Unknown Movie|3|U1`\)) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(## 3\) How malformed/edge input cases were injected) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Injected movie-file issues:) Tj
+0 -14 Td
+(- malformed delimiter counts: `BadRowNoDelimiters`, `Too|Many|Fields|Here`) Tj
+0 -14 Td
+(- empty required fields: `Action||NoId`, `|M10|NoGenre`, `Action|M11|`) Tj
+0 -14 Td
+(- duplicate ID: `Action|M1|Alpha Duplicate ID`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Injected ratings-file issues:) Tj
+0 -14 Td
+(- malformed delimiter counts: `BadRowNoDelimiters`, `Too|Many|Fields|Here`) Tj
+0 -14 Td
+(- empty required fields: `NoUser|3|`, `NoMovie||U1`) Tj
+0 -14 Td
+(- invalid rating values: `Alpha|notanumber|U1`, `Alpha|6|U1`) Tj
+0 -14 Td
+(- duplicate rating \(same user + same movie key\): `Alpha|1|U1` after `Alpha|5|U1`) Tj
+0 -14 Td
+(- unknown movie for cross-file matching: `Unknown Movie|3|U1`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(## 4\) How data distribution was designed to exercise different code paths) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(The generated dataset was intentionally structured to trigger all required logic paths.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(- Top-movie ranking path:) Tj
+0 -14 Td
+(  - `Alpha` and `Beta` share the same average \(4.5\), forcing tie-break by movie name key.) Tj
+0 -14 Td
+(- Secondary tie path:) Tj
+0 -14 Td
+(  - `Eta`, `Gamma`, and `Zeta` all have average 4.0 and equal counts, forcing deterministic ) Tj
+0 -14 Td
+(  name/id ordering.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 3095 >>
+stream
+BT
+/F1 12 Tf
+54 726 Td
+(- Genre ranking path:) Tj
+0 -14 Td
+(  - Action, SciFi, Drama each have rated movies with different genre averages.) Tj
+0 -14 Td
+(- User-preference path:) Tj
+0 -14 Td
+(  - `U1` and `U2` both span multiple genres, producing distinct top-genre outcomes.) Tj
+0 -14 Td
+(- Recommendation path:) Tj
+0 -14 Td
+(  - both `U1` and `U2` have fewer-than-3 recommendations, validating truncation behavior.) Tj
+0 -14 Td
+(- Negative/error paths:) Tj
+0 -14 Td
+(  - unmatched movies, malformed lines, unknown user, no-results genre.) Tj
+0 -14 Td
+(- Case handling paths:) Tj
+0 -14 Td
+(  - movie names use case-sensitive matching with whitespace normalization,) Tj
+0 -14 Td
+(  - genre input remains case-insensitive.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(## 5\) Table of test cases: purpose, input, expected, actual, pass/fail) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Actual results below are from running:) Tj
+0 -14 Td
+(`python test_movie_recommender.py`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(\(Equivalent on some systems: `python3 test_movie_recommender.py`\)) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(| Test ID | Purpose | Input | Expected | Actual | Pass/Fail |) Tj
+0 -14 Td
+(|---|---|---|---|---|---|) Tj
+0 -14 Td
+(| 01 | Movies parsing count/errors | generated `movies.txt` with malformed+duplicate rows | 8 ) Tj
+0 -14 Td
+(valid rows and expected error categories | matches expected | PASS |) Tj
+0 -14 Td
+(| 02 | Ratings parsing count/errors | generated `ratings.txt` with malformed+invalid+duplicate ) Tj
+0 -14 Td
+(rows | 14 valid rows and expected error categories | matches expected | PASS |) Tj
+0 -14 Td
+(| 03 | Unknown movie handling | includes `Unknown Movie|3|U1` | appears in unmatched-ratings ) Tj
+0 -14 Td
+(errors | appears | PASS |) Tj
+0 -14 Td
+(| 04 | Movie stats correctness | Alpha ratings from U1/U3 | avg 4.5, count 2 | avg 4.5, count 2) Tj
+0 -14 Td
+( | PASS |) Tj
+0 -14 Td
+(| 05 | Top 3 movie ordering | full dataset | `Alpha`, `Beta`, `Theta` | same | PASS |) Tj
+0 -14 Td
+(| 06 | Tie-break by name/id | equal-average/equal-count movies | `Eta`, `Gamma`, `Zeta` order |) Tj
+0 -14 Td
+( same | PASS |) Tj
+0 -14 Td
+(| 07 | Genre filter case-insensitive | query `acTION` | Action movies in sorted order | matches) Tj
+0 -14 Td
+( | PASS |) Tj
+0 -14 Td
+(| 08 | Genre popularity computation | computed movie/genre stats | Action > SciFi > Drama | ) Tj
+0 -14 Td
+(same | PASS |) Tj
+0 -14 Td
+(| 09 | User top genre U1 | U1 ratings | Action | Action | PASS |) Tj
+0 -14 Td
+(| 10 | User top genre U2 | U2 ratings | Drama | Drama | PASS |) Tj
+0 -14 Td
+(| 11 | Recommendations U1 | U1 ratings and unseen movies | 1 recommendation \(`Beta`\) | same | ) Tj
+0 -14 Td
+(PASS |) Tj
+0 -14 Td
+(| 12 | Recommendations U2 | U2 ratings and unseen movies | 1 recommendation \(`Epsilon`\) | same ) Tj
+0 -14 Td
+(| PASS |) Tj
+0 -14 Td
+(| 13 | Unknown user behavior | user not in data | top genre `None`, recs `[]` | same | PASS |) Tj
+0 -14 Td
+(| 14 | No-results genre behavior | query `Comedy` | empty list | empty list | PASS |) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Summary from run:) Tj
+0 -14 Td
+(- Total tests: 14) Tj
+0 -14 Td
+(- Passed: 14) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 817 >>
+stream
+BT
+/F1 12 Tf
+54 726 Td
+(- Failed: 0) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(## 6\) Remaining testing limitations and future tests) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Current limitations:) Tj
+0 -14 Td
+(- tests directly validate functions; CLI interactive flows are not fully scripted end-to-end.) Tj
+0 -14 Td
+(- one main dataset pair is reused; broader randomized datasets are not included.) Tj
+0 -14 Td
+(- no large-file performance benchmarks.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Future tests to add:) Tj
+0 -14 Td
+(- scripted CLI transcript tests \(stdin automation\)) Tj
+0 -14 Td
+(- larger-scale stress tests) Tj
+0 -14 Td
+(- more tie cases where movie IDs become the final resolver) Tj
+0 -14 Td
+(- expanded Unicode/edge normalization cases) Tj
+0 -14 Td
+(- additional malformed row variants \(embedded delimiters, extreme whitespace\)) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 8 0 R >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000135 00000 n 
+0000000207 00000 n 
+0000002978 00000 n 
+0000003104 00000 n 
+0000006250 00000 n 
+0000006376 00000 n 
+0000007243 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+7369
+%%EOF

@@ -1,0 +1,547 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [ 5 0 R 7 0 R 9 0 R 11 0 R 13 0 R ] /Count 5 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Times-Roman >>
+endobj
+4 0 obj
+<< /Length 2672 >>
+stream
+BT
+/F1 12 Tf
+54 726 Td
+(# Coding Documentation - Movie Recommender \(Python 3.12\)) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(## 1\) Chatbots used) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(- OpenAI ChatGPT was used for planning, code generation, testing script generation, and ) Tj
+0 -14 Td
+(iterative cleanup.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(## 2\) Full prompt log + short summary per prompt) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(### Prompt 1) Tj
+0 -14 Td
+(```text) Tj
+0 -14 Td
+(Hello, The following requests i will be making must be compatible with Python 3.12 and only ) Tj
+0 -14 Td
+(standard library modules. You can only use function-based designs with no classes.) Tj
+0 -14 Td
+(The following is what i wish as a starters point: Build movie_recommender.py runnable as: ) Tj
+0 -14 Td
+(python movie_recommender.py. Then, build test_movie_recommender.py runnable as: python ) Tj
+0 -14 Td
+(test_movie_recommender.py. Then, add docstring to every function. Then, use robust file parsing) Tj
+0 -14 Td
+( with line-by-line validation. Then for ratings, valid range is 0 to 5 inclusive. Do not round ) Tj
+0 -14 Td
+(computed averages unless explicitly asked. Also, I want deterministic sorting and tie-breaks) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Dataset formats should be the following) Tj
+0 -14 Td
+(Movies file line: movie_genre|movie_id|movie_name) Tj
+0 -14 Td
+(Ratings file line: movie_name|rating|user_id) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(And the features it carries should support :) Tj
+0 -14 Td
+(Movie popularity: top n movies by average rating) Tj
+0 -14 Td
+(Top n in a genre by average rating) Tj
+0 -14 Td
+(Genre popularity: top n genres by average of movie-average ratings in that genre) Tj
+0 -14 Td
+(User top genre: genre most preferred by user \(based on that user's ratings in each genre\)) Tj
+0 -14 Td
+(Recommend movies: 3 most popular movies from user?s top genre not yet rated by that user) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(First output should be a:) Tj
+0 -14 Td
+(A function list with signatures) Tj
+0 -14 Td
+(Data structures you will use) Tj
+0 -14 Td
+(Exact tie-break rules) Tj
+0 -14 Td
+(Case-sensitivity policy \(what is case-sensitive vs not, and why\)) Tj
+0 -14 Td
+(Error-handling policy for malformed/duplicate rows) Tj
+0 -14 Td
+(Do not write code yet.) Tj
+0 -14 Td
+(```) Tj
+0 -14 Td
+(Summary: produced design/spec only \(functions, data structures, tie-breaks, and policies\).) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(### Prompt 2) Tj
+0 -14 Td
+(```text) Tj
+0 -14 Td
+(Now implement movie_recommender.py exactly from your plan.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Requirements:) Tj
+0 -14 Td
+(- Menu-driven CLI) Tj
+0 -14 Td
+(- Options to load movies file and ratings file) Tj
+0 -14 Td
+(- Options to run each feature individually) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 2272 >>
+stream
+BT
+/F1 12 Tf
+54 726 Td
+(- Clear print output for each menu option) Tj
+0 -14 Td
+(- Handle missing data gracefully \(e.g., if ratings not loaded yet\)) Tj
+0 -14 Td
+(- Keep logic in reusable functions; CLI should call them) Tj
+0 -14 Td
+(- Add type hints) Tj
+0 -14 Td
+(- Add concise docstrings for every function) Tj
+0 -14 Td
+(- Keep code beginner-readable for CS210 level) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(At the end, print:) Tj
+0 -14 Td
+(1\) Full code block for movie_recommender.py) Tj
+0 -14 Td
+(2\) A short checklist mapping each assignment requirement to function names) Tj
+0 -14 Td
+(```) Tj
+0 -14 Td
+(Summary: generated first full `movie_recommender.py`.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(### Prompt 3) Tj
+0 -14 Td
+(```text) Tj
+0 -14 Td
+(Audit your generated movie_recommender.py against this checklist and patch any gaps:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(- Python 3.12 compatibility) Tj
+0 -14 Td
+(- All required features implemented) Tj
+0 -14 Td
+(- No rounding of averages) Tj
+0 -14 Td
+(- Deterministic sorting with explicit tie-breaks) Tj
+0 -14 Td
+(- Robust malformed-line handling in both files) Tj
+0 -14 Td
+(- Duplicate movie name/year handling policy) Tj
+0 -14 Td
+(- Duplicate \(movie,user\) rating handling policy) Tj
+0 -14 Td
+(- All functions have docstrings) Tj
+0 -14 Td
+(- CLI can test all features manually) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Return:) Tj
+0 -14 Td
+(- Corrected full movie_recommender.py) Tj
+0 -14 Td
+(- ?What changed? list) Tj
+0 -14 Td
+(```) Tj
+0 -14 Td
+(Summary: generated corrected full code and a change summary.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(### Prompt 4) Tj
+0 -14 Td
+(```text) Tj
+0 -14 Td
+(Now create test_movie_recommender.py.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Testing requirements:) Tj
+0 -14 Td
+(- Must be runnable directly: python test_movie_recommender.py) Tj
+0 -14 Td
+(- Must create its own temporary input files at runtime \(do not depend on external files\)) Tj
+0 -14 Td
+(- Must test every required feature) Tj
+0 -14 Td
+(- Must include malformed rows and edge cases) Tj
+0 -14 Td
+(- Must compare actual outputs to expected values and print PASS/FAIL per test) Tj
+0 -14 Td
+(- Must include at least 12 tests) Tj
+0 -14 Td
+(- Must end with a summary count) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Also include:) Tj
+0 -14 Td
+(- Test data designed to exercise tie-breaks) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 2404 >>
+stream
+BT
+/F1 12 Tf
+54 726 Td
+(- Cases with fewer than 3 recommendations) Tj
+0 -14 Td
+(- Case-insensitive input checks where relevant) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Return full code for test_movie_recommender.py only.) Tj
+0 -14 Td
+(```) Tj
+0 -14 Td
+(Summary: generated `test_movie_recommender.py` with 14 tests and summary output.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(### Prompt 5) Tj
+0 -14 Td
+(```text) Tj
+0 -14 Td
+(Create a complete coding_doc in Markdown that I can export to PDF.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Include these exact sections:) Tj
+0 -14 Td
+(1\) Chatbots used and division of work) Tj
+0 -14 Td
+(2\) Full prompt log \(copy each prompt exactly as written\) + short summary of code generated per ) Tj
+0 -14 Td
+(prompt) Tj
+0 -14 Td
+(3\) Case sensitivity decisions: what is case-sensitive vs not, why, whether initial code handled) Tj
+0 -14 Td
+( it, and fixes made) Tj
+0 -14 Td
+(4\) Code parts I did not understand, explanation prompts I asked, and what language features ) Tj
+0 -14 Td
+(were beyond class coverage) Tj
+0 -14 Td
+(5\) All safeguards used for bad input formatting/data issues) Tj
+0 -14 Td
+(6\) Data issues not initially handled and follow-up prompts used to add handling) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Use clean headings and concise academic tone.) Tj
+0 -14 Td
+(```) Tj
+0 -14 Td
+(Summary: produced first coding doc draft.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(### Prompt 6) Tj
+0 -14 Td
+(```text) Tj
+0 -14 Td
+(Create a complete testing_doc in Markdown that I can export to PDF.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Include these exact sections:) Tj
+0 -14 Td
+(1\) Which input files were manually created vs chatbot-generated) Tj
+0 -14 Td
+(2\) Number of movies and ratings in each test file pair) Tj
+0 -14 Td
+(3\) How malformed/edge input cases were injected) Tj
+0 -14 Td
+(4\) How data distribution was designed to exercise different code paths) Tj
+0 -14 Td
+(5\) Table of test cases: purpose, input, expected, actual, pass/fail) Tj
+0 -14 Td
+(6\) Remaining testing limitations and future tests) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Use clear, grading-friendly structure.) Tj
+0 -14 Td
+(```) Tj
+0 -14 Td
+(Summary: produced first testing doc draft.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(### Prompt 7) Tj
+0 -14 Td
+(```text) Tj
+0 -14 Td
+(Give me a final submission checklist and exact terminal commands to create hw1.zip with:) Tj
+0 -14 Td
+(- movie_recommender.py) Tj
+0 -14 Td
+(- test_movie_recommender.py) Tj
+0 -14 Td
+(- coding_doc.pdf) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 8 0 R >>
+endobj
+10 0 obj
+<< /Length 2778 >>
+stream
+BT
+/F1 12 Tf
+54 726 Td
+(- testing_doc.pdf) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Constraints:) Tj
+0 -14 Td
+(- No extra folder inside zip) Tj
+0 -14 Td
+(- No data files included) Tj
+0 -14 Td
+(- Include commands to verify zip contents before Autolab submission) Tj
+0 -14 Td
+(```) Tj
+0 -14 Td
+(Summary: produced packaging checklist and zip verification commands.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(## 3\) Case-sensitivity decisions \(final code-aligned\)) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(- Movie name matching between ratings and movies:) Tj
+0 -14 Td
+(  - Policy: case-sensitive matching with whitespace normalization only.) Tj
+0 -14 Td
+(  - How: `normalize_movie_name\(\)` strips leading/trailing spaces and collapses internal ) Tj
+0 -14 Td
+(  whitespace.) Tj
+0 -14 Td
+(  - Reason: treat movie names as identifiers while still tolerating spacing differences.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(- Genre matching:) Tj
+0 -14 Td
+(  - Policy: case-insensitive.) Tj
+0 -14 Td
+(  - How: `normalize_genre\(\)` uses strip/collapse/casefold.) Tj
+0 -14 Td
+(  - Reason: user genre input should be tolerant of capitalization.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(- IDs:) Tj
+0 -14 Td
+(  - `movie_id` and `user_id` are treated as case-sensitive identifiers.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Fix made after review: documentation text was updated from case-insensitive movie-name matching) Tj
+0 -14 Td
+( to case-sensitive movie-name matching, to match final code.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(## 4\) Code parts not understood at first + explanation prompts + beyond-class language features) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Initially unclear parts:) Tj
+0 -14 Td
+(- Deterministic tuple sorting and why order keys are arranged as they are.) Tj
+0 -14 Td
+(- Why movie-name normalization and genre normalization use different rules.) Tj
+0 -14 Td
+(- Why unknown movie ratings are logged and excluded from stats.) Tj
+0 -14 Td
+(- `raise SystemExit\(...\)` entrypoint pattern.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Clarification prompts used:) Tj
+0 -14 Td
+(- "Explain how `movie_sort_key` controls deterministic tie-break behavior.") Tj
+0 -14 Td
+(- "Explain why movie names are case-sensitive but genres are case-insensitive in this version.") Tj
+0 -14 Td
+(- "Explain unmatched-ratings handling and why those lines are not used in averages.") Tj
+0 -14 Td
+(- "Explain what `raise SystemExit\(main\(...\)\)` does.") Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Language/features in generated code that were not explicitly taught in the provided Jan/Feb ) Tj
+0 -14 Td
+(lecture and recitation notebooks:) Tj
+0 -14 Td
+(- `from __future__ import annotations`) Tj
+0 -14 Td
+(- explicit use of `Optional`, `Set`, `Callable` type hints at this level of detail) Tj
+0 -14 Td
+(- `tempfile.TemporaryDirectory\(\)` in testing) Tj
+0 -14 Td
+(- `raise SystemExit\(...\)` entrypoint style) Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 10 0 R >>
+endobj
+12 0 obj
+<< /Length 1969 >>
+stream
+BT
+/F1 12 Tf
+54 726 Td
+() Tj
+0 -14 Td
+(## 5\) Safeguards used for bad input formatting/data issues) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Movies parsing safeguards:) Tj
+0 -14 Td
+(- exact 3-field delimiter validation \(`|`\)) Tj
+0 -14 Td
+(- non-empty field checks) Tj
+0 -14 Td
+(- blank-line ignore) Tj
+0 -14 Td
+(- duplicate `movie_id` rejection \(keep first\)) Tj
+0 -14 Td
+(- duplicate normalized movie-name key rejection \(keep first\)) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Ratings parsing safeguards:) Tj
+0 -14 Td
+(- exact 3-field delimiter validation \(`|`\)) Tj
+0 -14 Td
+(- non-empty field checks) Tj
+0 -14 Td
+(- numeric rating validation) Tj
+0 -14 Td
+(- range validation \(`0 <= rating <= 5`\)) Tj
+0 -14 Td
+(- duplicate `\(user_id, movie_name_key\)` rejection \(keep first\)) Tj
+0 -14 Td
+(- blank-line ignore) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Cross-file safeguards:) Tj
+0 -14 Td
+(- unknown movie names in ratings are recorded as unmatched and excluded from computations) Tj
+0 -14 Td
+(- feature functions safely return empty results when data is missing) Tj
+0 -14 Td
+(- CLI checks loading order before running feature options) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(## 6\) Data issues not initially handled and follow-up updates) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Issues caught during review:) Tj
+0 -14 Td
+(- documentation had drifted from code in two places:) Tj
+0 -14 Td
+(  - movie-name case policy) Tj
+0 -14 Td
+(  - movie tie-break tuple description) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Fixes made:) Tj
+0 -14 Td
+(- case-sensitivity section now matches code \(`normalize_movie_name` preserves case\)) Tj
+0 -14 Td
+(- tie-break text now matches code \(`\(-avg, name_key, movie_id\)`, not `\(-avg, -count, name_key, ) Tj
+0 -14 Td
+(movie_id\)`\)) Tj
+0 -14 Td
+(- testing doc command wording now includes platform-safe `python ...` command style) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Verification after updates:) Tj
+0 -14 Td
+(- `python test_movie_recommender.py` executed successfully with all tests passing \(`14/14`\).) Tj
+ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 12 0 R >>
+endobj
+xref
+0 14
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000149 00000 n 
+0000000221 00000 n 
+0000002944 00000 n 
+0000003070 00000 n 
+0000005393 00000 n 
+0000005519 00000 n 
+0000007974 00000 n 
+0000008100 00000 n 
+0000010930 00000 n 
+0000011058 00000 n 
+0000013079 00000 n 
+trailer
+<< /Size 14 /Root 1 0 R >>
+startxref
+13207
+%%EOF

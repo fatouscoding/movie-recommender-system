@@ -1,4 +1,4 @@
-# Movie-Recommender
+# Movie-Recommender System
 ## Overview
 Built a Python-based movie recommendation system that analyzes user ratings and movie metadata to generate personalized recommendations and popularity rankings.
 

@@ -5,12 +5,14 @@ Built a Python-based movie recommendation system that analyzes user ratings and 
 
 The system processes structured datasets of movies and user ratings, computes statistics, and provides insights such as top movies, genre trends, and user-specific recommendations.
 
+Designed to simulate core functionality of real-world recommender systems using structured datasets, ranking algorithms, and user preference analysis.
+
 ---
 
 ## Features
 - Top N Movies by Average Rating  
 - Top Movies Within a Genre  
-- Genre Popularity (based on average movie ratings)  
+- Genre Popularity (based on average of movie-average ratings)
 - User’s Most Preferred Genre  
 - Personalized Movie Recommendations  
 - Command-Line Interface (CLI) for interactive testing  
@@ -71,8 +73,7 @@ These can be used to test all features of the program.
 
 ## How to Run
 
+1. Run the program:
 ```bash
 python movie_recommender.py
-
-
 

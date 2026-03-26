@@ -3,8 +3,6 @@
 ## Overview
 Built a Python-based movie recommendation system that processes structured datasets of user ratings and movie metadata to generate personalized recommendations, genre trends, and popularity rankings — using Python's standard library only, no external dependencies.
 
-Designed to simulate core functionality of real-world recommender systems using structured datasets, ranking algorithms, and user preference analysis.
-
 ---
 
 ## Features

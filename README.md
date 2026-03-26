@@ -44,7 +44,21 @@ The system processes structured datasets of movies and user ratings, computes st
   - Tie-breaking logic  
   - Invalid input handling  
   - Recommendation correctness  
-- Achieved **100% pass rate (14/14 tests)**  
+- Achieved **100% pass rate (14/14 tests)**
+
+---
+
+##Demo
+
+###Top Movies by Rating
+<img width="626" height="205" alt="Screenshot 2026-03-25 233441" src="https://github.com/user-attachments/assets/6677820c-847f-4a18-be7c-a7356823772b" />
+
+
+
+###Personalized Recommendations
+
+<img width="469" height="139" alt="Screenshot 2026-03-25 233431" src="https://github.com/user-attachments/assets/9b9f7730-79ff-4436-b78e-520be9a6beea" />
+
 
 ---
 
@@ -52,3 +66,6 @@ The system processes structured datasets of movies and user ratings, computes st
 
 ```bash
 python movie_recommender.py
+
+
+

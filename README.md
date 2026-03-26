@@ -58,6 +58,17 @@ The system processes structured datasets of movies and user ratings, computes st
 
 ---
 
+## Sample Data
+
+This repository includes sample input files:
+
+- `movies.txt`
+- `ratings.txt`
+
+These can be used to test all features of the program.
+
+---
+
 ## How to Run
 
 ```bash
